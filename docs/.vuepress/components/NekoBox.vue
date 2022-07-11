@@ -118,7 +118,6 @@
 
 <script>
 import { onMounted, onUnmounted } from "vue";
-import WOW from "wow.js";
 import "animate.css/animate.min.css";
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -135,17 +134,7 @@ export default {
         },
     },
     methods: {
-        initWOW: function () {
-            new WOW({
-                boxClass: "wow",
-                animateClass: "animate__animated",
-                offset: 0,
-                mobile: true,
-                live: true,
-                scrollContainer: null,
-                resetAnimation: true,
-            }).init();
-        }, imgOnly: function (chain) {
+        imgOnly: function (chain) {
             if (typeof chain === 'undefined') return false;
             if (chain.length == 1) {
                 if (typeof chain[0].img === 'string' && chain[0].img.length > 0)
@@ -154,8 +143,17 @@ export default {
             return false;
         }
     },
-    mounted() {
-        this.initWOW();
+    async mounted() {
+        const module = await import('wow.js');
+        new module.default({
+            boxClass: "wow",
+            animateClass: "animate__animated",
+            offset: 0,
+            mobile: true,
+            live: true,
+            scrollContainer: null,
+            resetAnimation: true,
+        }).init();
     },
 };
 </script>

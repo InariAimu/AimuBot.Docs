@@ -2,6 +2,8 @@
 import { defineUserConfig } from '@vuepress/cli'
 import { defaultTheme } from '@vuepress/theme-default'
 
+import { viteBundler } from '@vuepress/bundler-vite'
+
 import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
 import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
 import { containerPlugin } from '@vuepress/plugin-container'
@@ -16,7 +18,7 @@ export default defineUserConfig({
 
     head: [
         ['link', { rel: 'icon', href: '/images/head.jpg' }],
-        ["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" }],
+        //["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" }],
     ],
 
     host: '127.0.0.1',
@@ -34,6 +36,16 @@ export default defineUserConfig({
             after: (): string => '</p></div>\n'
         }),
     ],
+
+    bundler: viteBundler({
+        viteOptions: {
+            // @ts-expect-error: vite does not provide types for ssr options yet
+            ssr: {
+                //noExternal: ['wow.js'],
+            },
+        },
+        vuePluginOptions: {},
+    }),
 
     theme: defaultTheme({
         logo: '/images/head.jpg',
