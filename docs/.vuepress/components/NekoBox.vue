@@ -170,26 +170,27 @@ export default {
 }
 
 .chat-bg {
-    background-color: #f3f6f9;
+    background-color: var(--c-bg-light);
     width: auto;
 }
 
 .qq-chat {
-    background-color: #E53935;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px;
     transition-property: box-shadow, opacity;
-    border-radius: 4px;
-    margin: 0 2px;
+    margin: 0 0 5px 0;
+    border-radius: 6px;
 }
 
 .qq-chat-toolbar {
-    height: 36px;
+    border-radius: 6px 6px 0 0;
+    background-color: #E53935;
+    height: 42px;
     display: flex;
     justify-content: space-between;
 }
 
 .qq-chat-toolbar-icon {
-    padding: 6px;
+    padding: 10px;
     width: 24px;
     height: 24px;
     color: white;
@@ -198,7 +199,7 @@ export default {
 
 .qq-chat-title {
     color: white;
-    padding-top: 56px;
+    padding-top: 60px;
 }
 
 .c-avatar {
@@ -233,7 +234,7 @@ export default {
     border-radius: 0.5rem;
     padding: 0.4rem 0.8rem;
     margin: 0.4rem 0.8rem;
-    background-color: #fff;
+    background-color: var(--c-bg);
 }
 
 .message .message-box-img {
@@ -270,7 +271,7 @@ export default {
     top: 0;
     width: 8px;
     height: 12px;
-    color: #fff;
+    color: var(--c-bg);
     border: 0 solid transparent;
     border-bottom: 7px solid;
     border-radius: 0 0 0 8px;
@@ -293,15 +294,15 @@ export default {
 
 .msg-p-reply {
     margin: 0;
-    color: #333;
-    background-color: #eee;
+    color: var(--c-text-light);
+    background-color: var(--c-bg-lighter);
     padding: 0.2rem 0.4rem;
 }
 
 .msg-reply {
     margin-top: 5px;
-    color: #333;
-    background-color: #eee;
+    color: var(--c-text-light);
+    background-color: var(--c-bg-lighter);
     justify-content: space-between;
 }
 
@@ -319,7 +320,7 @@ export default {
 
 .notify .notify-box {
     max-width: 70%;
-    background: #e7e7e7;
+    background: var(--c-bg-lighter);
     border-radius: 5px;
     padding: 5px 12px;
     font-size: 12px;
@@ -346,6 +347,7 @@ export default {
     display: flex;
     padding: 5px 12px 10px 12px;
     justify-content: space-between;
+    border-radius: 0 0 6px 6px;
 }
 
 .c-btn {
@@ -377,9 +379,9 @@ export default {
     flex-grow: 1;
     flex-basis: 0;
     margin-right: 8px;
-    padding: 0 5px 0 5px;
+    padding: 2px 5px 0 5px;
     border-radius: 4px;
-    background-color: white;
+    background-color: var(--c-bg);
 }
 
 .c-reply-icon {
