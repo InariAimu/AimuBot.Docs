@@ -26,21 +26,20 @@
                         </div>
                     </template>
                     <template v-else-if="typeof item.msg === 'string' && item.msg.length > 0">
-                        <div class="message-box" v-html="item.msg.replace(/\n/g, '<br />').replace(/ /g, '&nbsp;')">
+                        <div class="message-box" v-html="this.text2Html(item.msg)">
                         </div>
                     </template>
                     <template v-else>
                         <div class="message-box">
                             <template v-for="c in item.chain">
                                 <p class="msg-p" v-if="typeof c.msg === 'string' && c.msg.length > 0"
-                                    v-html="c.msg.replace(/\n/g, '<br />').replace(/ /g, '&nbsp;')">
+                                    v-html="this.text2Html(c.msg)">
                                 </p>
                                 <p class="msg-p-at" v-if="typeof c.at === 'string' && c.at.length > 0"
-                                    v-html="c.at.replace(/\n/g, '<br />').replace(/ /g, '&nbsp;')">
+                                    v-html="this.text2Html(c.at)">
                                 </p>
                                 <div class="c-row msg-p-reply" v-if="typeof c.reply === 'string' && c.reply.length > 0">
-                                    <p class="msg-p-reply">
-                                        {{ c.reply.replace(/\n/g, '<br />').replace(/ /g, '&nbsp;') }}
+                                    <p class="msg-p-reply" v-html="this.text2Html(c.reply)">
                                     </p>
                                     <div class="c-reply-icon c-btn-wrap">
                                         <font-awesome-icon :icon="['fas', 'arrow-up']" />
@@ -67,21 +66,20 @@
                         </div>
                     </template>
                     <template v-else-if="typeof item.msg === 'string' && item.msg.length > 0">
-                        <div class="message-box" v-html="item.msg.replace(/\n/g, '<br />').replace(/ /g, '&nbsp;')">
+                        <div class="message-box" v-html="this.text2Html(item.msg)">
                         </div>
                     </template>
                     <template v-else>
                         <div class="message-box">
                             <template v-for="c in item.chain">
                                 <p class="msg-p" v-if="typeof c.msg === 'string' && c.msg.length > 0"
-                                    v-html="c.msg.replace(/\n/g, '<br />').replace(/ /g, '&nbsp;')">
+                                    v-html="this.text2Html(c.msg)">
                                 </p>
                                 <p class="msg-p-at" v-if="typeof c.at === 'string' && c.at.length > 0"
-                                    v-html="c.at.replace(/\n/g, '<br />').replace(/ /g, '&nbsp;')">
+                                    v-html="this.text2Html(c.at)">
                                 </p>
                                 <div class="c-row msg-reply" v-if="typeof c.reply === 'string' && c.reply.length > 0">
-                                    <p class="msg-p-reply">
-                                        {{ c.reply.replace(/\n/g, '<br />').replace(/ /g, '&nbsp;') }}
+                                    <p class="msg-p-reply" v-html="this.text2Html(c.reply)">
                                     </p>
                                     <div class="c-reply-icon c-btn-wrap">
                                         <font-awesome-icon :icon="['fas', 'arrow-up']" />
@@ -99,7 +97,7 @@
                             style="display: inline; white-space: nowrap;margin-right:5px;">
                             <font-awesome-icon :icon="['fas', 'info-circle']" />
                         </span>
-                        <span v-html="item.msg.replace(/\n/g, '<br/>').replace(/ /g, '&nbsp;')"></span>
+                        <span v-html="this.text2Html(item.msg)"></span>
                     </div>
                 </div>
             </template>
@@ -141,6 +139,9 @@ export default {
                     return true;
             }
             return false;
+        },
+        text2Html: function (text) {
+            return text.replace(/\n/g, '<br/>').replace(/ /g, '&nbsp;');
         }
     },
     async mounted() {
@@ -177,7 +178,7 @@ export default {
 .qq-chat {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px;
     transition-property: box-shadow, opacity;
-    margin: 0 0 5px 0;
+    margin: 0 0 30px 0;
     border-radius: 6px;
 }
 
@@ -199,7 +200,7 @@ export default {
 
 .qq-chat-title {
     color: white;
-    padding-top: 60px;
+    padding-top: 58px;
 }
 
 .c-avatar {
@@ -301,6 +302,7 @@ export default {
 
 .msg-reply {
     margin-top: 5px;
+    margin-bottom: 5px;
     color: var(--c-text-light);
     background-color: var(--c-bg-lighter);
     justify-content: space-between;
