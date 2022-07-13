@@ -95,4 +95,4 @@ https://github.com/xxx/yyy
     </neko-box>
 </ClientOnly>
 
-> 这没有使用 [Vuetify](https://vuetifyjs.com/) 提供的 Material Design 框架，因为他和 VuePress 和 Vite 兼容性都差。构造消息的 NekoBox 组件是模仿自 nonebot2（2.0.0a16） [文档](https://61d3d9dbcadf413fd3238e89--nonebot2.netlify.app/guide/cqhttp-guide.html#%E5%8E%86%E5%8F%B2%E6%80%A7%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%AF%B9%E8%AF%9D) 的 Messenger 组件。
+> 这并没有使用 [Vuetify](https://vuetifyjs.com/) 提供的 Material Design 框架，因为他和 VuePress `^2.0.0-beta.48` 和 Vite 兼容性都不太好，并且会污染整个文档的 CSS。这里手搓了一个 [NekoBox.vue](https://github.com/InariAimu/AimuBot.Docs/blob/main/docs/.vuepress/components/NekoBox.vue) 组件，模仿自 [mokabot2](https://docs-mokabot.arisa.moe/plugins/) 与 nonebot2（2.0.0a16） [文档](https://61d3d9dbcadf413fd3238e89--nonebot2.netlify.app/guide/cqhttp-guide.html#%E5%8E%86%E5%8F%B2%E6%80%A7%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%AF%B9%E8%AF%9D) 的 Messenger 组件。

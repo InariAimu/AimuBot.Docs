@@ -2,7 +2,7 @@
 home: true
 heroImage: /images/head.jpg
 heroText: Aimubot
-tagline: Aimubot 是一个多用途（？）机器人。 
+tagline: 多功能（？）IM 机器人。 
 actionText: 查看命令集 →
 actionLink: /modules/
 ---

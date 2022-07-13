@@ -7,8 +7,8 @@ import NekoBox from './components/NekoBox.vue'
 
 export default defineClientConfig({
     async enhance({ app, router, siteData }) {
-        app.config.procdutionTip = false,
-            app.component('font-awesome-icon', FontAwesomeIcon);
+        app.config.procdutionTip = false;
+        app.component('font-awesome-icon', FontAwesomeIcon);
         app.component('neko-box', NekoBox);
 
         if (!__VUEPRESS_SSR__) {

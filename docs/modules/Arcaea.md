@@ -51,10 +51,12 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 
 示例：
 
-```text
-/ac bind ToasterKoishi
-/ac bind 000000001
-```
+<ClientOnly>
+	<neko-box :messages="[
+		{ position: 'right', msg: '/ac bind 559842662' },{ position: 'left', chain: [{ reply: '/ac bind InariAimu' }, { msg: '已绑定 InariAimu/559842662 (12.92)' } ] },
+]">
+	</neko-box>
+</ClientOnly>
 
 
 ## 保存分数 <Badge type="warning" text="测试中" vertical="top" />
@@ -62,9 +64,7 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 在不查询或无法查询成绩时保存分数
 
 ::: warning 注意
-
 仅用于无法查分时在 bot 数据库中手动保存您的成绩，请谨慎使用。
-
 :::
 
 命令格式：
@@ -85,9 +85,7 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 进行一次 best30 查询。
 
 ::: warning 注意
-
 您的 ptt 越低，则查分所需要的等待时间越长（有时可能长达两分钟以上），这并不意味着 bot 失去响应。请耐心等待，不要重复查询。
-
 :::
 
 示例：
@@ -102,9 +100,7 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 查询 b40（在原有 b30 的基础上增加 9 个地板以下的 overflow）
 
 ::: warning 注意
-
 您的 ptt 越低，则查分所需要的等待时间越长（有时可能长达两分钟以上），这并不意味着 bot 失去响应。请耐心等待，不要重复查询。
-
 :::
 
 示例：
@@ -173,9 +169,7 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 获取指定谱面的平面预览图。
 
 ::: warning 注意
-
 `Final Verdict` 中的一些谱面目前渲染不正常，正在修复中。
-
 :::
 
 命令格式：
@@ -186,11 +180,12 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 
 示例：
 
-```text
-/ac chart 猫魔王 byd
-/ac chart dropdead pst
-/ac chart ifi
-```
+<ClientOnly>
+	<neko-box :messages="[
+		{ position: 'right', msg: '/ac chart 妙脆角 byd' },{ position: 'left', chain: [{ img: '/images/Arcaea/tempestissimo_3.webp' } ] },
+]">
+	</neko-box>
+</ClientOnly>
 
 
 ## 设置 b30 样式
@@ -259,9 +254,7 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 生成指定谱面的理论值成绩图
 
 ::: warning 注意
-
 请勿滥用
-
 :::
 
 命令格式：
@@ -283,9 +276,7 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 生成一张音游王 b30 成绩图（即最高理论 ptt 值）
 
 ::: warning 注意
-
 请勿滥用
-
 :::
 
 示例：
@@ -326,15 +317,17 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 
 示例：
 
-```text
-/ac usr ToasterKoishi
-/ac usr 582325489
-```
+<ClientOnly>
+	<neko-box :messages="[
+		{ position: 'right', msg: '/ac usr SkisK49' },{ position: 'left', chain: [ { reply: '/ac usr SkisK49' }, { img: '/images/Arcaea/SkisK49.webp' } ] },
+]">
+	</neko-box>
+</ClientOnly>
 
 
 ## 指定玩家成绩查询
 
-获取指定玩家指定谱面的游玩成绩（默认难度为 ftr）
+获取指定玩家指定谱面的游玩成绩（默认难度为 ftr）。
 
 命令格式：
 
@@ -344,10 +337,12 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 
 示例：
 
-```text
-/ac usrinfo NitroX72 lfdy
-/ac usrinfo SkisK49 pentiment byd
-```
+<ClientOnly>
+	<neko-box :messages="[
+		{ position: 'right', msg: '/ac usrinfo SkisK49 Testify byd' },{ position: 'left', chain: [ { reply: '/ac usrinfo SkisK49 Testify byd' }, { img: '/images/Arcaea/SkisK49.webp' } ] },
+]">
+	</neko-box>
+</ClientOnly>
 
 
 ## Aua 排名查询 <Badge type="warning" text="测试中" vertical="top" />
@@ -355,11 +350,8 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 查询您在 ptt 接近的玩家中的排名情况。可用来分析是否虚高或虚低。
 
 ::: warning 注意
-
 **此命令会占用大量查分资源，请勿滥用**，可能需要较长时间响应，不要重复查询。
-
 此结果仅表明您在使用 Aua 查分的玩家中的排名，不反映真实的排行榜数据，因此可能偏高。仅供参考。
-
 :::
 
 命令格式：

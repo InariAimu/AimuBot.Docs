@@ -35,11 +35,20 @@ Bot信息模块
 
 ## Ping！
 
-检查 bot 在线状态
+检查 bot 在线状态。回复可能是 Konata, Kagami, Tsukasa, Miyuki 中的任意一个。
 
 命令格式：
 
 ```text
 /ping
 ```
+
+示例：
+
+<ClientOnly>
+	<neko-box :messages="[
+		{ position: 'right', msg: '/ping' },{ position: 'left', msg: 'Hello, I\'m Kagami' },
+]">
+	</neko-box>
+</ClientOnly>
 

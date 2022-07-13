@@ -13,3 +13,4 @@
 - <Badge type="warning" text="测试中" vertical="middle" /> 表示此命令在测试中，可能出现问题，并且返回结果不代表最终品质。
 - <Badge type="warning" text="开发中" vertical="middle" /> 表示此命令在开发中，暂时不可使用。
 - <Badge type="warning" text="默认关闭" vertical="middle" /> 表示此命令默认不开放使用。
+- <Badge type="danger" text="关闭" vertical="middle" /> 表示此命令由于某种原因停止使用。

@@ -74,6 +74,7 @@ export default defineUserConfig({
                     children: [
                         '/intro/',
                         '/intro/command',
+                        '/intro/about',
                     ]
                 }
             ],

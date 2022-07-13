@@ -45,7 +45,7 @@
                                         <font-awesome-icon :icon="['fas', 'arrow-up']" />
                                     </div>
                                 </div>
-                                <img v-if="typeof c.img === 'string' && c.img.length > 0" :src="c.img" />
+                                <img class="medium-zoom-image c-inline-img" v-if="typeof c.img === 'string' && c.img.length > 0" :src="c.img" />
                             </template>
                         </div>
                     </template>
@@ -85,7 +85,7 @@
                                         <font-awesome-icon :icon="['fas', 'arrow-up']" />
                                     </div>
                                 </div>
-                                <img v-if="typeof c.img === 'string' && c.img.length > 0" :src="c.img" />
+                                <img class="medium-zoom-image c-inline-img" v-if="typeof c.img === 'string' && c.img.length > 0" :src="c.img" />
                             </template>
                         </div>
                     </template>
@@ -166,7 +166,7 @@ export default {
 
 .chat {
     padding: 14px 12px 14px 12px;
-    min-height: 150px;
+    min-height: 100px;
     overflow-x: hidden;
 }
 
@@ -231,11 +231,12 @@ export default {
 .message .message-box {
     position: relative;
     width: fit-content;
-    max-width: 55%;
+    max-width: 60%;
     border-radius: 0.5rem;
-    padding: 0.4rem 0.8rem;
+    padding: 0.4rem 0.6rem;
     margin: 0.4rem 0.8rem;
     background-color: var(--c-bg);
+    word-break: break-all;
 }
 
 .message .message-box-img {
@@ -296,16 +297,16 @@ export default {
 .msg-p-reply {
     margin: 0;
     color: var(--c-text-light);
-    background-color: var(--c-bg-lighter);
     padding: 0.2rem 0.4rem;
 }
 
 .msg-reply {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 2px;
+    margin-bottom: 8px;
     color: var(--c-text-light);
     background-color: var(--c-bg-lighter);
     justify-content: space-between;
+    border-radius: 5px;
 }
 
 .notify {
@@ -390,5 +391,9 @@ export default {
     width: 16px;
     padding-top: 5px;
     padding-right: 3px;
+}
+
+.c-inline-img {
+    border-radius: 5px;
 }
 </style>
