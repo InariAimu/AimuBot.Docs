@@ -53,13 +53,13 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 
 <ClientOnly>
 	<neko-box :messages="[
-		{ position: 'right', msg: '/ac bind 559842662' },{ position: 'left', chain: [{ reply: '/ac bind InariAimu' }, { msg: '已绑定 InariAimu/559842662 (12.92)' } ] },
+		{ position: 'right', msg: '/ac bind 559842662' },{ position: 'left', chain: [{ reply: '/ac bind 559842662' }, { msg: '已绑定 InariAimu/559842662 (12.92)' } ] },
 ]">
 	</neko-box>
 </ClientOnly>
 
 
-## 保存分数 <Badge type="warning" text="测试中" vertical="top" />
+## 保存分数 <Badge type="warning" text="开发中" vertical="top" />
 
 在不查询或无法查询成绩时保存分数
 
@@ -112,7 +112,7 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 
 ## 查询别名 <Badge type="warning" text="测试中" vertical="top" />
 
-查询别名
+查询某歌曲的别名。
 
 命令格式：
 
@@ -122,9 +122,12 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 
 示例：
 
-```text
-/ac alias 妙脆角
-```
+<ClientOnly>
+	<neko-box :messages="[
+		{ position: 'right', msg: '/ac alias 妙脆角' },{ position: 'left', chain: [ { reply: '/ac alias 妙脆角' }, { img: '/images/Arcaea/t.webp' }, { msg: '[Tempestissimo]\n[1] 奥运会\n[2] 妙脆角\n[3] 对立打电话\n[4] 对立点外卖\n[5] 我没有买外卖\n[6] 我要杀光光\n[7] 暴风雨\n[8] 猫对立\n[9] 猫魔王\n[10] 电话拨号\n[11] 电话来啰\n[12] 风暴' } ] },
+]">
+	</neko-box>
+</ClientOnly>
 
 
 ## 查询歌曲信息
@@ -139,10 +142,12 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 
 示例：
 
-```text
-/ac song tempestissimo
-/ac song 我没有买外卖
-```
+<ClientOnly>
+	<neko-box :messages="[
+		{ position: 'right', msg: '/ac alias 猫光' },{ position: 'left', chain: [ { reply: '/ac alias 猫光' }, { img: '/images/Arcaea/t2.webp' }, { msg: '[Testify]\nArtist: void (Mournfinale) feat. 星熊南巫\nPack: finale\nBPM: 178\nRatings: 7 | 9.4 | 10.8 | 12' } ] },
+]">
+	</neko-box>
+</ClientOnly>
 
 
 ## 定数表查询
@@ -158,18 +163,20 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 
 示例：
 
-```text
-/ac rating 9.9
-/ac r 11.4
-```
+<ClientOnly>
+	<neko-box :messages="[
+		{ position: 'right', msg: '/ac rating 9.8' },{ position: 'left', chain: [ { reply: '/ac rating 9.8' }, { img: '/images/Arcaea/rating.webp' } ] },
+]">
+	</neko-box>
+</ClientOnly>
 
 
 ## 谱面预览 <Badge type="warning" text="测试中" vertical="top" />
 
 获取指定谱面的平面预览图。
 
-::: warning 注意
-`Final Verdict` 中的一些谱面目前渲染不正常，正在修复中。
+::: warning
+建议尽量使用 songid 进行请求。
 :::
 
 命令格式：
@@ -244,17 +251,44 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 
 示例：
 
+<ClientOnly>
+	<neko-box :messages="[
+		{ position: 'right', msg: '/ac adda tempestissimo/风暴，妙脆角，猫魔王，我没有买外卖' },{ position: 'left', chain: [ { reply: '/ac adda tempestissimo/风暴，妙脆角，猫魔王，我没有买外卖' }, { msg: '[Tempestissimo]\nAdded 4 records.' } ] },
+]">
+	</neko-box>
+</ClientOnly>
+
+
+## 推分建议 <Badge type="danger" text="关闭" vertical="top" />
+
+提供推分建议。可能需要很长时间查询，请勿重复查询。
+
+::: warning
+（未开发完成。暂不开放）
+:::
+
+命令格式：
+
 ```text
-/ac adda tempestissimo/风暴，妙脆角，猫魔王，我没有买外卖
+/ac suggest
 ```
+
+示例：
+
+<ClientOnly>
+	<neko-box :messages="[
+		{ position: 'right', msg: '/ac suggest' },{ position: 'left', chain: [ { reply: '/ac suggest' }, { msg: '已开始计算。可能需要很长时间，请耐心等待，不要重复查询。' } ] },{ position: 'left', chain: [ { reply: '/ac suggest' }, { msg: '[推荐结果]' } ] },
+]">
+	</neko-box>
+</ClientOnly>
 
 
 ## 音游王生成
 
-生成指定谱面的理论值成绩图
+生成指定谱面的理论值成绩图。
 
 ::: warning 注意
-请勿滥用
+请勿滥用。此功能仅用于 recent 模板测试，不要真去当 yyw.jpg。滥用造成的后果由且仅由您个人承担。
 :::
 
 命令格式：
@@ -265,10 +299,12 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 
 示例：
 
-```text
-/ac yyw 猫光 byd
-/ac yyw 病女
-```
+<ClientOnly>
+	<neko-box :messages="[
+		{ position: 'right', msg: '/ac yyw 猫光 byd' },{ position: 'left', chain: [ { reply: '/ac yyw 猫光 byd' }, { img: '/images/Arcaea/yyw.webp' } ] },
+]">
+	</neko-box>
+</ClientOnly>
 
 
 ## 音游王生成（b30）
@@ -276,14 +312,23 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 生成一张音游王 b30 成绩图（即最高理论 ptt 值）
 
 ::: warning 注意
-请勿滥用
+请勿滥用。此功能仅用于 recent 模板测试，不要真去当 yyw.jpg。滥用造成的后果由且仅由您个人承担。
 :::
 
-示例：
+命令格式：
 
 ```text
 /ac yyw b30
 ```
+
+示例：
+
+<ClientOnly>
+	<neko-box :messages="[
+		{ position: 'right', msg: '/ac yyw b30' },{ position: 'left', chain: [ { reply: '/ac yyw b30' }, { img: '/images/Arcaea/yywb30.webp' } ] },
+]">
+	</neko-box>
+</ClientOnly>
 
 
 ## 指定谱面成绩查询
@@ -351,7 +396,7 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 
 ::: warning 注意
 **此命令会占用大量查分资源，请勿滥用**，可能需要较长时间响应，不要重复查询。
-此结果仅表明您在使用 Aua 查分的玩家中的排名，不反映真实的排行榜数据，因此可能偏高。仅供参考。
+此结果仅表明您在**使用 Aua 查过分的玩家**中的排名，不反映真实的排行榜数据，因此可能偏低。仅供参考。
 :::
 
 命令格式：
@@ -362,11 +407,12 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 
 示例：
 
-```text
-/acc
-/acc 骨折光
-/acc 风暴 byd
-```
+<ClientOnly>
+	<neko-box :messages="[
+		{ position: 'right', msg: '/acc' },{ position: 'left', chain:[ {'reply': '/acc'}, { msg: 'specta 2 9316448 8.89\nYour ptt: 10.50\nAua play rank in 10.40~10.60: #197/208 (top 94.71%)\nAua play rank in 10.00~11.00: #1010/1066 (top 94.75%)' }] },{ position: 'right', msg: '/acc vividtheory' },{ position: 'left', chain:[ {'reply': '/acc vividtheory'}, { msg: 'vividtheory 2 10000850 10.80\nYour ptt: 10.50\nAua play rank in 10.40~10.60: #1/460 (top 0.22%)\nAua play rank in 10.00~11.00: #1/2184 (top 0.05%)' }] },
+]">
+	</neko-box>
+</ClientOnly>
 
 
 ## Recent 查询
@@ -380,35 +426,44 @@ Arcaea 模块中大部分命令均以该命令起始。如果不指定任何参�
 ```
 
 
-## test <Badge type="tip" text="开发者" vertical="top" />
+## test <Badge type="tip" text="开发者" vertical="top" /> <Badge type="warning" text="测试中" vertical="top" />
 
-Arcaea 测试功能
+谱面难度分布查询。从 ptt 10.05~13.05，查看 Aua 查分玩家的 ptt-分数 分布图。可以用来分析谱面的真实难度、个人差、个人实力虚高/虚低情况等。
 
 命令格式：
 
 ```text
-/ac test <song_id>
+/ac test dist <song_id> [difficulty=ftr]
 ```
+
+示例：
+
+<ClientOnly>
+	<neko-box :messages="[
+		{ position: 'right', msg: '/ac test dist testify byd' },{ position: 'left', chain: [{ img: '/images/Arcaea/testify.webp' }] },
+]">
+	</neko-box>
+</ClientOnly>
 
 
 ## test2 <Badge type="tip" text="开发者" vertical="top" />
 
-Arcaea 测试功能2
+从 Aua 同步所有谱面信息。
 
 命令格式：
 
 ```text
-/ac test2
+/ac test sync song
 ```
 
 
 ## test3 <Badge type="tip" text="开发者" vertical="top" />
 
-Arcaea 测试功能3
+从 Aua 同步所有歌曲别名。
 
 命令格式：
 
 ```text
-/ac test3
+/ac test sync alias
 ```
 

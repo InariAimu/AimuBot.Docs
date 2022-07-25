@@ -35,9 +35,9 @@
                                 <p class="msg-p" v-if="typeof c.msg === 'string' && c.msg.length > 0"
                                     v-html="this.text2Html(c.msg)">
                                 </p>
-                                <p class="msg-p-at" v-if="typeof c.at === 'string' && c.at.length > 0"
+                                <span class="msg-span-at" v-if="typeof c.at === 'string' && c.at.length > 0"
                                     v-html="this.text2Html(c.at)">
-                                </p>
+                                </span>
                                 <div class="c-row msg-p-reply" v-if="typeof c.reply === 'string' && c.reply.length > 0">
                                     <p class="msg-p-reply" v-html="this.text2Html(c.reply)">
                                     </p>
@@ -54,6 +54,7 @@
                         <h4 class="toolbar-h4">🐱</h4>
                     </div>
                 </div>
+
                 <div v-else-if="item.position === 'left'" :key="index + 1"
                     class="c-row c-msg-start message wow animate__fadeInLeft" data-wow-duration="0.7s">
                     <div class="c-avatar" color="transparent" size="36">
@@ -75,9 +76,9 @@
                                 <p class="msg-p" v-if="typeof c.msg === 'string' && c.msg.length > 0"
                                     v-html="this.text2Html(c.msg)">
                                 </p>
-                                <p class="msg-p-at" v-if="typeof c.at === 'string' && c.at.length > 0"
+                                <span class="msg-span-at" v-if="typeof c.at === 'string' && c.at.length > 0"
                                     v-html="this.text2Html(c.at)">
-                                </p>
+                                </span>
                                 <div class="c-row msg-reply" v-if="typeof c.reply === 'string' && c.reply.length > 0">
                                     <p class="msg-p-reply" v-html="this.text2Html(c.reply)">
                                     </p>
@@ -289,15 +290,17 @@ export default {
     margin: 0;
 }
 
-.msg-p-at {
+.msg-span-at {
     margin: 0;
-    color: blue;
+    padding-right: 3px;
+    color: #2c3e50;
+    background-color: rgba(152, 251, 152, 0.726);
 }
 
 .msg-p-reply {
     margin: 0;
     color: var(--c-text-light);
-    padding: 0.2rem 0.4rem;
+    padding: 0.2rem 1.8rem 0.2rem 0.4rem;
 }
 
 .msg-reply {

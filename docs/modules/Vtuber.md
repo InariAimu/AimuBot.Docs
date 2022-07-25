@@ -3,7 +3,7 @@
 管人模块
 
 
-## 嘉然今天吃什么 <Badge type="danger" text="关闭" vertical="top" />
+## 嘉然今天吃什么 <Badge type="tip" text="开发者" vertical="top" />
 
 随机获取一段 `Asoul` 发病小作文。
 

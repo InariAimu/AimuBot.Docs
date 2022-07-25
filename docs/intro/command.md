@@ -21,10 +21,10 @@ AimuBot 命令的基本命令格式分为三个部分：
 形如以下样例：
 
 ```text
-/command <arg> <argA|argB> [optArg] [multiArg]...
+/command <arg> <argA|argB> [optArg] [optArg2=default] [multiArg]...
 ```
 
-其中，`/` 为命令提示符，`command` 为命令名称，`<arg>`、`<argA|argB>`、`[optArg]` 和 `[multiArg]` 均为命令参数。
+其中，`/` 为命令提示符，`command` 为命令名称，`<arg>`、`<argA|argB>`、`[optArg]`、`[optArg2]` 和 `[multiArg]` 均为命令参数。
 
 参数与命令之间、参数与参数之间需要用空格分开。但由于某些神秘的原因(懒)，参数与命令之间的空格有时可以省略掉。大多数情况下这并不会影响命令的使用，但还是建议加上空格。
 
@@ -37,6 +37,8 @@ AimuBot 命令的基本命令格式分为三个部分：
 `<arg>`、`<argA|argB>`、`[optArg]` 和 `[multiArg]` 中的 `<>` 与 `[]` 是参数类型的标志。使用 `<>` 包含的为必要参数，`[]` 为可选参数。`...` 表示该括号中的格式可以重复任意次。
 
 `<argA|argB>` 中的 `|` 为任选标志，代表该位置的参数可以是 `argA` 或 `argB` 中的任意一个。
+
+`[optArg2=default]` 表示如果不提供 `optArg2` 参数，则使用 `default` 作为默认值。
 
 ::: tip 提示
 
@@ -87,7 +89,7 @@ https://github.com/xxx/yyy
         { position: 'left', msg: '这是bot可能的输出结果' },
         { position: 'right', msg: '这又是一条指令示例' },
         { position: 'left', chain: [{ reply: '指令示例' }, { msg: '这是bot可能的回复' }] },
-        { position: 'center', msg: '你👉戳了戳稻荷爱萌' },
+        { position: 'center', msg: '你 👉戳了戳 稻荷爱萌' },
         { position: 'left', msg: '这是bot对戳一戳事件可能的输出' },
         { position: 'right', msg: '这是可能产生复杂输出的指令' },
         { position: 'left', chain: [{ reply: '指令' }, { at: '@user' }, { msg: '[表情包：猫猫] 6' }, { img: '/images/18.gif' }, { msg: 'awawawa' }] },

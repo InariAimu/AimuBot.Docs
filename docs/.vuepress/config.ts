@@ -13,12 +13,11 @@ import { nprogressPlugin } from '@vuepress/plugin-nprogress'
 export default defineUserConfig({
     base: '/',
     lang: 'zh-CN',
-    title: 'Aimubot',
-    description: 'Aimubot是一个多用途（？）机器人。',
+    title: 'AimuBot',
+    description: 'AimuBot是一个多功能机器人。',
 
     head: [
         ['link', { rel: 'icon', href: '/images/head.jpg' }],
-        //["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" }],
     ],
 
     host: '127.0.0.1',
@@ -54,16 +53,21 @@ export default defineUserConfig({
         warning: '注意',
         danger: '警告',
 
+        repo: 'https://github.com/InariAimu/AimuBot',
+
+        editLink: false,
+        editLinkText: '编辑此页',
+        docsRepo: 'https://github.com/InariAimu/AimuBot.Docs',
+        docsBranch: 'main',
+        docsDir: 'docs',
+
         lastUpdated: true,
         lastUpdatedText: '最近更新',
-
-        repo: 'InariAimu/aimubot',
-        editLink: false,
 
         navbar: [
             { text: '主页', link: '/', },
             { text: '简介', link: '/intro/' },
-            { text: '命令集', link: '/modules/' },
+            { text: '模块', link: '/modules/' },
         ],
 
         sidebar: {
@@ -80,7 +84,7 @@ export default defineUserConfig({
             ],
             '/modules/': [
                 {
-                    text: '命令集',
+                    text: '模块',
                     collapsible: true,
                     children: [
                         '/modules/',
